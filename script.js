@@ -39,12 +39,12 @@ function _redirectToConsumer() {
     scheme = 'Schmisa';
   }
 
-  var domain = "success"
+  var path = "success"
   if (cardNumber.length < 4) {
-    domain = "failure"
+    path = "failure"
   }
 
-  const newURL = `schmalfred-consumer://add-card/${domain}?last_4_digits=${last4Digits}&scheme=${scheme}`;
+  const newURL = `schmalfred-consumer://add-card/${path}?last_4_digits=${last4Digits}&scheme=${scheme}`;
   alert(newURL);
   window.location = newURL
 }
