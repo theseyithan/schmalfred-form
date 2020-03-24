@@ -1,18 +1,31 @@
 function sendCard() {
   const cardNumber = document.getElementById('card-number').value;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const delay = urlParams.get('delay');
+
   var pageName = 'success';
   if (cardNumber.length < 4) {
     pageName = 'failure';
   }
 
-  const newURL = `${pageName}.html?card_number=${cardNumber}`;
+  const newURL = `${pageName}.html?card_number=${cardNumber}&delay=${delay}`;
   window.location = newURL;
 }
 
 function redirectToConsumer() {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const delay = urlParams.get('delay');
+
+  var time = 0;
+  if (delay == "1") {
+    time = 1000;
+  }
+
   setTimeout(() => {
     _redirectToConsumer();
-  }, 1000);
+  }, time);
 }
 
 function _redirectToConsumer() {
@@ -32,5 +45,6 @@ function _redirectToConsumer() {
   }
 
   const newURL = `schmalfred-consumer://add-card/${domain}?last_4_digits=${last4Digits}&scheme=${scheme}`;
+  alert(newURL);
   window.location = newURL
 }
