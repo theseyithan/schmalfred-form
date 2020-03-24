@@ -1,16 +1,58 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 0 0;
+}
+
+.card-decsription {
+  font-family: sans-serif;
+  text-align: center;
+  margin-top: -8px;
+  color: gray;
+}
+
 .form-body, .body-center {
   display: flex;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
   margin-top: 40px;
 }
 
 form {
-  display: block;
-  margin: 0 auto;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.hstack {
+}
+
+.hstack input {
+  width: 40%;
+  display: float;
+  float: left;
+  margin-right: 16px;
 }
 
 input {
-  width: 320px;
-  margin-bottom: 10px !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  border-radius: 0px;
+  font-size: 0.8em;
+}
+
+hr {
+  width: 120%;
+  margin-left: -10%;
+  margin-top: 22px;
+  border: 0.5px solid gray;
+  overflow-x: hidden;
 }
 
 .success-body {
@@ -27,6 +69,17 @@ input {
   width: 80px;
 }
 
-input[type="button"] {
+input[type="number"] {
+  background-clip: padding-box;
+
   height: 44px;
+  border: 0.5px solid gray;
+}
+
+input[type="button"] {
+  height: 48px;
+  font-weight: bolder;
+  background-color: rgb(215, 15, 100);
+  border: none;
+  color: white;
 }

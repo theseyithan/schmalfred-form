@@ -1,7 +1,7 @@
 function sendCard() {
   const cardNumber = document.getElementById('card-number').value;
   const newURL = 'success.html?card_number='.concat(cardNumber);
-  window.location.replace(newURL);
+  window.location = newURL;
 }
 
 function redirectToConsumer() {
@@ -21,6 +21,11 @@ function _redirectToConsumer() {
     scheme = 'Schmisa';
   }
 
-  const newURL = `schmalfred-consumer://add-card/success?last_4_digits=${last4Digits}&scheme=${scheme}`;
-  window.location.replace(newURL);
+  var domain = "success"
+  if (cardNumber.length < 4) {
+    domain = "failure"
+  }
+
+  const newURL = `schmalfred-consumer://add-card/${domain}?last_4_digits=${last4Digits}&scheme=${scheme}`;
+  window.location = newURL
 }
