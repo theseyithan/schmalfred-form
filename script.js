@@ -1,6 +1,11 @@
 function sendCard() {
   const cardNumber = document.getElementById('card-number').value;
-  const newURL = 'success.html?card_number='.concat(cardNumber);
+  var pageName = 'success';
+  if (cardNumber.length < 4) {
+    pageName = 'failure';
+  }
+
+  const newURL = `${pageName}.html?card_number=${cardNumber}`;
   window.location = newURL;
 }
 
