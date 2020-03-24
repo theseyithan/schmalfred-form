@@ -9,6 +9,7 @@ html, body {
   text-align: center;
   margin-top: -8px;
   color: gray;
+  font-size: 0.9em;
 }
 
 .form-body, .body-center {
@@ -44,14 +45,14 @@ input {
   box-sizing: border-box;
   margin-bottom: 16px;
   border-radius: 0px;
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 
 hr {
   width: 120%;
   margin-left: -10%;
   margin-top: 22px;
-  border: 0.5px solid gray;
+  border: 0.5px solid #bbbbbb;
   overflow-x: hidden;
 }
 
@@ -73,7 +74,12 @@ input[type="number"] {
   background-clip: padding-box;
 
   height: 44px;
-  border: 0.5px solid gray;
+  border: 0.5px solid #bbbbbb;
+}
+
+input[type="number"]:focus {
+  border: 0.5px solid black;
+  outline: none;
 }
 
 input[type="button"] {
