@@ -16,7 +16,11 @@ function _redirectToConsumer() {
   const cardNumber = urlParams.get('card_number');
 
   const last4Digits = cardNumber.substr(cardNumber.length - 4);
-  const scheme = 'SchmasterCard';
-  const newURL = `schmalfred-consumer://add-card/success?last_4_digits:${last4Digits}&scheme=${scheme}`;
+  var scheme = 'SchmasterCard';
+  if (cardNumber.charAt(0) == '4') {
+    scheme = 'Schmisa';
+  }
+
+  const newURL = `schmalfred-consumer://add-card/success?last_4_digits=${last4Digits}&scheme=${scheme}`;
   window.location.replace(newURL);
 }
