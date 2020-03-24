@@ -1,0 +1,32 @@
+.form-body, .body-center {
+  display: flex;
+  margin-top: 40px;
+}
+
+form {
+  display: block;
+  margin: 0 auto;
+}
+
+input {
+  width: 320px;
+  margin-bottom: 10px !important;
+}
+
+.success-body {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.success-body p {
+  font-size: 2em;
+}
+
+.checkmark {
+  width: 80px;
+}
+
+input[type="button"] {
+  height: 44px;
+}
