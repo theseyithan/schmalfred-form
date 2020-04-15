@@ -34,17 +34,18 @@ function _redirectToConsumer() {
   const cardNumber = urlParams.get('card_number');
 
   const last4Digits = cardNumber.substr(cardNumber.length - 4);
-  var scheme = 'SchmasterCard';
+  const bin = cardNumber.substr(0, 6)
+  const success = cardNumber.length >= 6
+
+  var scheme = 'MasterCard';
   if (cardNumber.charAt(0) == '4') {
-    scheme = 'Schmisa';
+    scheme = 'Visa';
   }
 
-  var path = "success"
-  if (cardNumber.length < 4) {
-    path = "failure"
+  var url = `alfred.callback://add_credit_card/success/?last_4_digits=${last4Digits}&bin=${bin}&expiry_date=0330&token=${cardNumber}&scheme=${scheme}&provider=payu&should_save=true&tracking=...`
+  if (!success) {
+    url = `alfred.callback://add_credit_card/failure/?exception=PSPTimeout&tracking=...`
   }
 
-  const newURL = `alfred.callback://add-card/${path}?last_4_digits=${last4Digits}&scheme=${scheme}`;
-  alert(newURL);
-  window.location = newURL
+  window.location = url
 }
