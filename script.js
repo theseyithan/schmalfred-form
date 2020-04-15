@@ -44,7 +44,7 @@ function _redirectToConsumer() {
     path = "failure"
   }
 
-  const newURL = `schmalfred-consumer://add-card/${path}?last_4_digits=${last4Digits}&scheme=${scheme}`;
+  const newURL = `alfred.callback://add-card/${path}?last_4_digits=${last4Digits}&scheme=${scheme}`;
   alert(newURL);
   window.location = newURL
 }
